@@ -50,26 +50,34 @@ export const StatsModal = ({
       </BaseModal>
     )
   }
+  return (
+    <BaseModal
+      title={isGameWon ? WIN_MESSAGES : CORRECT_WORD_MESSAGE('JISOO')}
+      isOpen={isOpen}
+      handleClose={handleClose}
+    >
+    </BaseModal>
+  )
 
-  if (isGameLost) {
-    return (
-      <BaseModal
-        title={CORRECT_WORD_MESSAGE}
-        isOpen={isOpen}
-        handleClose={handleClose}
-      >
-      </BaseModal>
-    )
-  }
+  // if (isGameLost) {
+  //   return (
+  //     <BaseModal
+  //       title={CORRECT_WORD_MESSAGE('Jisoo')}
+  //       isOpen={isOpen}
+  //       handleClose={handleClose}
+  //     >
+  //     </BaseModal>
+  //   )
+  // }
   
-  if (isGameWon) {
-    return (
-      <BaseModal
-        title={WIN_MESSAGES}
-        isOpen={isOpen}
-        handleClose={handleClose}
-      >
-      </BaseModal>
-    )  
-  }
+  // if (isGameWon) {
+  //   return (
+  //     <BaseModal
+  //       title={WIN_MESSAGES}
+  //       isOpen={isOpen}
+  //       handleClose={handleClose}
+  //     >
+  //     </BaseModal>
+  //   )  
+  // }
 }

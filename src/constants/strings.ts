@@ -7,7 +7,7 @@ export const WORD_NOT_FOUND_MESSAGE = 'Word not found'
 export const HARD_MODE_ALERT_MESSAGE =
   'Hard Mode can only be enabled at the start!'
 export const CORRECT_WORD_MESSAGE = (solution: string) =>
-  `Sorry you didn't get it! The person who got the rocks box was ${solution}. It'll be in the staff office for you to pick up!`
+  `Sorry you didn't get it! The person who got the rocks box was ${solution}. Jisoo, the rocks box will be in the staff office for you to pick up!`
 export const WRONG_SPOT_MESSAGE = (guess: string, position: number) =>
   `Must use ${guess} in position ${position}`
 export const NOT_CONTAINED_MESSAGE = (letter: string) =>
