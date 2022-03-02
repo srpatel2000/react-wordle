@@ -81,9 +81,9 @@ function App() {
     }
     if (loaded.guesses.length === MAX_CHALLENGES && !gameWasWon) {
       setIsGameLost(true)
-      showErrorAlert(CORRECT_WORD_MESSAGE(solution), {
-        persist: true,
-      })
+      // showErrorAlert(CORRECT_WORD_MESSAGE(solution), {
+      //   persist: true,
+      // })
     }
     return loaded.guesses
   })
@@ -148,21 +148,19 @@ function App() {
   }, [guesses])
 
   useEffect(() => {
+    const delayMs = REVEAL_TIME_MS * MAX_WORD_LENGTH
     if (isGameWon) {
-      const winMessage =
-        WIN_MESSAGES[Math.floor(Math.random() * WIN_MESSAGES.length)]
-      const delayMs = REVEAL_TIME_MS * MAX_WORD_LENGTH
-
-      showSuccessAlert(winMessage, {
-        delayMs,
-        onClose: () => setIsStatsModalOpen(true),
-      })
+      // const winMessage =
+      //   WIN_MESSAGES[Math.floor(Math.random() * WIN_MESSAGES.length)]
+      setTimeout(() => {
+        setIsStatsModalOpen(true)
+      }, delayMs)
     }
 
     if (isGameLost) {
       setTimeout(() => {
         setIsStatsModalOpen(true)
-      }, GAME_LOST_INFO_DELAY)
+      }, delayMs)
     }
   }, [isGameWon, isGameLost, showSuccessAlert])
 
