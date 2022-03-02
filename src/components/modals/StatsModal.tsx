@@ -52,12 +52,15 @@ export const StatsModal = ({
   }
   return (
     <BaseModal
-      title={isGameWon ? WIN_MESSAGES : CORRECT_WORD_MESSAGE('JISOO')}
+      title={isGameWon ? WIN_MESSAGES : CORRECT_WORD_MESSAGE('Jisoo')}
       isOpen={isOpen}
       handleClose={handleClose}
     >
+      <img src={require('./jisoo_rocks_box.jpeg')} />
     </BaseModal>
   )
+
+  
 
   // if (isGameLost) {
   //   return (
